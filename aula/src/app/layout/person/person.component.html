@@ -1,0 +1,41 @@
+<div class="people-list">
+    <h2>People list</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of people">
+          <td>{{ person.id }}</td>
+          <td>{{ person.name }}</td>
+          <td>{{ person.age }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>People list higher than 30</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of people">
+          <ng-container *ngIf="person.age >= 30">
+            <td>{{ person.id }}</td>
+            <td>{{ person.name }}</td>
+            <td>{{ person.age }}</td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
